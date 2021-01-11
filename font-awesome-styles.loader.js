@@ -15,7 +15,7 @@ var styles = [
 
 module.exports = function(content) {
   this.cacheable(true);
-  var config = this.exec(content, this.resourcePath);
+  var config = require(this.resourcePath) || {};
   var start =
     "@import          \"~font-awesome/scss/_variables.scss\";\n"
     + "$fa-font-path: \"~font-awesome/fonts/\";\n"
